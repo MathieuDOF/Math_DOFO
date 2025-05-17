@@ -1,0 +1,24 @@
+{
+  "name": "math_dofo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MathieuDOF/Math_DOFO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MathieuDOF/Math_DOFO/issues"
+  },
+  "homepage": "https://github.com/MathieuDOF/Math_DOFO#readme",
+  "description": "",
+  "dependencies": {
+    "tailwindcss": "^4.1.7",
+    "vite": "^6.3.5"
+  }
+}
