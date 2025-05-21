@@ -6,15 +6,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Mathieu DOFONOU</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {}
+      },
+      plugins: [daisyui]
+    }
+  </script>
+
+  <!-- DaisyUI -->
+  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
+
+  <!-- Dégradé animé -->
+  <style>
+    .animated-gradient {
+      background: linear-gradient(-45deg, #ec4899, #f472b6, #f9a8d4, #fbcfe8);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
   </head>
   
-  <body>
-    <h1 class="underline underline-offset-1 text center">
-       MATHIEU DOFO
-    </h1>
-    <button class="btn btn-primary">
-      MA VIE PERSO
-    </button>
-    <div class="bg-blue-100 h-32"></div>
-  </body>
+  <body class="animated-gradient min-h-screen flex flex-col items-center justify-center text-white">
+
+<nav class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <span class="text-white text-xl font-bold">Mathieu DOFO</span>
+    <div class="flex space-x-4">
+      <a href="#" class="text-white hover:underline">Accueil</a>
+      <a href="#" class="text-white hover:underline">Projets</a>
+      <a href="#" class="text-white hover:underline">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- 🕳️ Petit espace pour éviter que le contenu soit caché -->
+<div class="h-20"></div>
+
+  <div class="h-20"></div>
+
+  <!-- Titre -->
+  <h1 class="text-4xl font-bold underline underline-offset-4 text-center my-6">Bienvenue sur mon site</h1>
+
+  <!-- Carte floutée -->
+  <div class="flex justify-center">
+    <div class="card w-96 bg-white/30 backdrop-blur-md border border-white/20 shadow-xl">
+      <div class="card-body">
+        <h2 class="card-title text-white">Présentation</h2>
+        <p class="text-white">Un mélange d’élégance et de technologie.</p>
+        <div class="card-actions justify-end">
+          <button class="btn btn-primary">Explorer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+
+
 </html>
