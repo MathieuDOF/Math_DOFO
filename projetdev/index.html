@@ -7,16 +7,25 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Mathieu DOFONOU</title>
      <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
-        extend: {}
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
       },
       plugins: [daisyui]
     }
   </script>
-
-  <!-- DaisyUI -->
   <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
 
   <!-- Dégradé animé -->
