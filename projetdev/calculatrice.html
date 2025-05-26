@@ -1,17 +1,76 @@
-<section id="calculatrice" class="tab-content hidden">
-      <div class="text-center">
-        <h2 class="text-4xl mb-6 animate__animated animate__bounceIn">Calculatrice</h2>
-        <div class="flex justify-center space-x-4 mb-4">
-          <input id="num1" type="number" class="input input-bordered input-animated" placeholder="Numéro 1" />
-          <select id="operator" class="select select-bordered input-animated">
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
-          </select>
-          <input id="num2" type="number" class="input input-bordered input-animated" placeholder="Numéro 2" />
-        </div>
-        <button class="btn btn-primary btn-animated pulse" onclick="calculate()">Calculer</button>
-        <p id="result" class="mt-4 text-xl font-bold"></p>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculatrice</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-pink-300 via-rose-200 to-pink-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white/90 p-6 rounded-xl shadow-xl w-80">
+    <h1 class="text-2xl font-bold mb-4 text-center text-gray-700">Calculatrice</h1>
+    
+    <input id="display" type="text" readonly class="w-full mb-4 p-3 text-right bg-gray-100 rounded text-xl font-mono text-gray-700 shadow-inner" />
+    
+    <div class="grid grid-cols-4 gap-3">
+      <!-- Row 1 -->
+      <button class="bg-gray-200 hover:bg-gray-300 p-3 rounded text-lg font-semibold" onclick="clearDisplay()">C</button>
+      <button class="bg-gray-200 hover:bg-gray-300 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('(')">(</button>
+      <button class="bg-gray-200 hover:bg-gray-300 p-3 rounded text-lg font-semibold" onclick="appendToDisplay(')')">)</button>
+      <button class="bg-pink-400 hover:bg-pink-500 text-white p-3 rounded text-lg font-semibold" onclick="appendToDisplay('/')">÷</button>
+
+      <!-- Row 2 -->
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('7')">7</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('8')">8</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('9')">9</button>
+      <button class="bg-pink-400 hover:bg-pink-500 text-white p-3 rounded text-lg font-semibold" onclick="appendToDisplay('*')">×</button>
+
+      <!-- Row 3 -->
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('4')">4</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('5')">5</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('6')">6</button>
+      <button class="bg-pink-400 hover:bg-pink-500 text-white p-3 rounded text-lg font-semibold" onclick="appendToDisplay('-')">−</button>
+
+      <!-- Row 4 -->
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('1')">1</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('2')">2</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('3')">3</button>
+      <button class="bg-pink-400 hover:bg-pink-500 text-white p-3 rounded text-lg font-semibold" onclick="appendToDisplay('+')">+</button>
+
+      <!-- Row 5 -->
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold col-span-2" onclick="appendToDisplay('0')">0</button>
+      <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded text-lg font-semibold" onclick="appendToDisplay('.')">.</button>
+      <button class="bg-green-500 hover:bg-green-600 text-white p-3 rounded text-lg font-semibold" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    function appendToDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      try {
+        document.getElementById('display').value = eval(document.getElementById('display').value);
+      } catch {
+        document.getElementById('display').value = 'Erreur';
+      }
+    }
+  </script>
+  <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <span class="text-white text-xl font-bold">Mathieu DOFO</span>
+      <div class="flex space-x-4">
+        <a href="/index.html" class="text-white hover:underline">Accueil</a>
+        <a href="/calculatrice.html" class="text-white hover:underline">calculatrice</a>
+        <a href="/concact.html" class="text-white hover:underline">Contact</a>
       </div>
-    </section>
+    </div>
+  </nav>
+</body>
+</html>
