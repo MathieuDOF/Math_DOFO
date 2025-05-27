@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <title>Formulaire de contact</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .animated-gradient {
+      background: linear-gradient(270deg, #fbcfe8, #f472b6, #ec4899, #fbcfe8);
+      background-size: 600% 600%;
+      animation: gradientBG 10s ease infinite;
+    }
+  </style>
 </head>
 <body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-200 to-pink-500 text-gray-900">
   <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
