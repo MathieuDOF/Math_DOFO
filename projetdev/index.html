@@ -26,39 +26,41 @@
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
-
-  <!-- Dégradé animé -->
   <style>
-    body {
-      background: linear-gradient(-45deg, #ec4899, #f472b6, #f9a8d4, #fbcfe8);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-    }
+  body {
+    background-color: #f9c2d9; /* Plus rose, mais toujours doux */
+    margin: 0;
+    overflow-x: hidden;
+  }
 
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-  </style>
+  canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+  
 </head>
 
 <body class="min-h-screen text-white font-sans">
+  <canvas id="background"></canvas>
+
+  
+
 
   <!-- 🧊 NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
+  <nav id="navbar" class="bg-animated backdrop-blur-md border-b border-white/20 fixed top-0 left-0 w-full z-50 shadow-md transition duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <span class="text-white text-xl font-bold">Mathieu DOFO</span>
+      <span class="text-white text-2xl font-extrabold drop-shadow-md">Mathieu DOFO</span>
       <div class="flex space-x-4">
-        <a href="#" class="text-white hover:underline">Accueil</a>
-        <a href="/calculatrice.html" class="text-white hover:underline">Calculatrice</a>
-        <a href="/contact.html" class="text-white hover:underline">Contact</a>
+        <a href="/index.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Accueil</a>
+        <a href="/calculatrice.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Calculatrice</a>
+        <a href="/contact.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Contact</a>
       </div>
     </div>
   </nav>
@@ -72,7 +74,10 @@
 
   <!-- 💼 PROJETS -->
   <section id="projets" class="max-w-6xl mx-auto px-6 py-10">
-    <h2 href="/aboutme.html" class="text-3xl font-bold mb-6 text-center">About Me</h2>
+    <h2 class="text-3xl font-bold mb-6 text-center">
+      <a href="/aboutme.html" class="hover:underline text-inherit">About Me</a>
+    </h2>
+
     <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
       
       <!-- 📦 BOX EXPÉRIENCES avec effets, grande fenêtre et icônes -->
@@ -219,6 +224,58 @@
       }
     });
   </script>
+
+  <script>
+  const canvas = document.getElementById('background');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createParticles(count) {
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2.5 + 1.5, // un peu plus gros
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.5 + 0.5 // plus opaques
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 72, 146, ${p.alpha})`; // Rose foncé (style pétale)
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  createParticles(100);
+  animate();
+</script>
+
+
   
 
 </body>

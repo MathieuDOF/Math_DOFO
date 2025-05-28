@@ -1,3 +1,8 @@
 @import "tailwindcss";
 @import "daisyui";
+.bg-animated {
+  background: linear-gradient(-45deg, #fecdd3, #fbcfe8, #fcd5ce, #fde2e4);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
 

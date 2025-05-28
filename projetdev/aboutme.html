@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathieu DOFO - Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      },
+      plugins: [daisyui]
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
+  <style>
+  body {
+    background-color: #f9c2d9; /* Plus rose, mais toujours doux */
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+  
+</head>
+
+<body class="min-h-screen text-white font-sans">
+  <canvas id="background"></canvas>
+
+  <div class="max-w-xl mx-auto bg-white/80 text-black p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white/30 mt-24 animate-fadeIn transition hover:scale-105 duration-500">
+  <p class="text-lg font-medium leading-relaxed">
+    Je suis à la recherche d'un stage d’une durée de 4 à 6 semaines dans le domaine de l'informatique, 
+    et plus particulièrement en cybersécurité, afin de mettre en pratique mes connaissances et développer 
+    de nouvelles compétences techniques en collaboration avec des professionnels du secteur.
+  </p>
+</div>
+
+    <div class="max-w-xl mx-auto bg-white/80 text-black p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white/30 mt-24 animate-fadeIn transition hover:scale-105 duration-500">
+  <p class="text-lg font-medium leading-relaxed">
+    Je ratique régulière du basketball et de la musculation. Je suis un fervent passionée d'informatique et des nouvelles technologies. Mais sur tout et avant tout je suis un passionée Sport mécaniques et automobile 
+
+  </p>
+</div>
+
+
+  
+
+
+  <!-- 🧊 NAVBAR -->
+  <nav id="navbar" class="bg-animated backdrop-blur-md border-b border-white/20 fixed top-0 left-0 w-full z-50 shadow-md transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <span class="text-white text-2xl font-extrabold drop-shadow-md">Mathieu DOFO</span>
+      <div class="flex space-x-4">
+        <a href="/index.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Accueil</a>
+        <a href="/calculatrice.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Calculatrice</a>
+        <a href="/contact.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="h-20"></div>
+  <script>
+  const canvas = document.getElementById('background');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createParticles(count) {
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+        alpha: Math.random() * 0.5 + 0.3
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      // rebond aux bords
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 105, 180, ${p.alpha})`; // rose flashy avec transparence
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  createParticles(100); // nombre de particules
+  animate();
+</script>
+
+
+
+  
+
+</body>
+</html>

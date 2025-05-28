@@ -8,40 +8,28 @@
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Dégradé bleu clair animé + animation hover sur les boxes -->
   <style>
-    body {
-      background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #a5f3fc, #dbeafe);
-      background-size: 400% 400%;
-      animation: gradientMove 10s ease infinite;
-      min-height: 100vh;
-    }
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+  body {
+    background-color: #c2e0f9; /* Plus rose, mais toujours doux */
+    margin: 0;
+    overflow-x: hidden;
+  }
 
-    /* Animation hover sur les sections */
-    section:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(255 255 255 / 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    section {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      will-change: transform, box-shadow;
-      cursor: pointer;
-    }
-  </style>
+  canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
 </head>
 <body class="font-sans text-white">
+    <canvas id="background"></canvas>
+
 
   <!-- Navbar -->
   <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
@@ -55,35 +43,162 @@
     </div>
   </nav>
 
-  <div class="h-20"></div> <!-- marge sous la navbar -->
+  <div class="h-20"></div>
 
-  <main class="max-w-4xl mx-auto px-6 py-10 space-y-8">
+  <main class="max-w-7xl mx-auto px-8 py-12">
 
-    <!-- Box 1 -->
-    <section class="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20">
-      <h2 class="text-2xl font-semibold mb-2">Stage d'observation - Technocentre Renault</h2>
-      <p class="italic mb-4">Saint-Quentin en Yvelines (1 semaine)</p>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Participation à des présentations techniques en français et en anglais.</li>
-        <li>Prise de notes et préparation de comptes-rendus pour les réunions d'équipe.</li>
-      </ul>
-    </section>
+    <h1 class="text-4xl font-bold mb-16 text-center underline underline-offset-4 animate-fadeIn">
+      Expériences Professionnelles & Objectifs Futurs
+    </h1>
 
-    <!-- Box 2 -->
-    <section class="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20">
-      <h2 class="text-2xl font-semibold mb-2">Serveur / chef de rang - L’Idéale des Gourmands</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Accueil et service des clients, gestion des commandes.</li>
-        <li>Développement de la capacité à interagir professionnellement avec les clients.</li>
-        <li>Adaptation aux situations imprévues et gestion du stress en période de forte affluence.</li>
-      </ul>
-    </section>
+    <!-- Grille 3 colonnes sur grand écran, 1 colonne mobile -->
+    <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+
+      <!-- Bloc Expériences -->
+      <section class="bg-white/30 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/30 animate-fadeIn transition hover:scale-105 duration-500 min-h-[350px]">
+        <h2 class="text-3xl font-bold mb-6 text-white text-center">Expériences Professionnelles</h2>
+        
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-1 text-white">Stage d'observation - Technocentre Renault</h3>
+          <p class="text-white/90 italic mb-2">Saint-Quentin en Yvelines (1 semaine)</p>
+          <ul class="list-disc list-inside text-white/90 space-y-1">
+            <li>Participation à des présentations techniques en français et en anglais.</li>
+            <li>Prise de notes et préparation de comptes-rendus pour les réunions d'équipe.</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-1 text-white">Serveur / chef de rang - L’Idéale des Gourmands</h3>
+          <ul class="list-disc list-inside text-white/90 space-y-1">
+            <li>Accueil et service des clients, gestion des commandes.</li>
+            <li>Développement de la capacité à interagir professionnellement avec les clients.</li>
+            <li>Adaptation aux situations imprévues et gestion du stress en période de forte affluence.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bloc Objectifs Futurs -->
+      <section class="bg-white/30 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/30 animate-fadeIn transition hover:scale-105 duration-500 min-h-[350px] flex flex-col justify-center">
+        <h2 class="text-3xl font-bold mb-6 text-white text-center">Objectifs futurs</h2>
+        <p class="text-white/90 text-lg leading-relaxed text-center">
+          Dans le futur, je souhaite poursuivre sur un master en cybersécurité, puis effectuer deux années d’expertise à l’étranger.
+        </p>
+      </section>
+
+      <!-- Bloc Compétences & Langues -->
+      <section class="bg-white/30 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/30 animate-fadeIn transition hover:scale-105 duration-500 min-h-[350px]">
+        <h2 class="text-3xl font-bold mb-6 text-white text-center">Compétences & Langues</h2>
+
+        <div class="mb-6">
+          <h3 class="text-2xl font-semibold mb-2 text-white">Compétences</h3>
+          <ul class="list-disc list-inside text-white/90 space-y-1">
+            <li>Fondamentaux en C, Python et WEB</li>
+            <li>Python pour la sécurité, Pentest WEB</li>
+            <li>Capacité à travailler en équipe et à gérer des projets collaboratifs</li>
+            <li>Organisation et rigueur</li>
+            <li>Bonne capacité d'écoute et leadership</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-2 text-white">Langues</h3>
+          <ul class="list-disc list-inside text-white/90 space-y-1">
+            <li>Français (langue maternelle)</li>
+            <li>Anglais B2 - TOEIC 845</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
 
   </main>
 
   <footer class="text-center py-6 text-white/70">
     © 2025 Mathieu DOFO. Tous droits réservés.
   </footer>
+
+  <!-- Script opacité navbar au scroll -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove('bg-white/20');
+        navbar.classList.add('bg-white/70', 'backdrop-blur-lg');
+      } else {
+        navbar.classList.add('bg-white/20');
+        navbar.classList.remove('bg-white/70', 'backdrop-blur-lg');
+      }
+    });
+  </script>
+
+  <!-- Animation fadeIn Tailwind (personnalisée) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <script>
+  const canvas = document.getElementById('background');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createParticles(count) {
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2.5 + 1.5, // un peu plus gros
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.5 + 0.5 // plus opaques
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 72, 146, ${p.alpha})`; // Rose foncé (style pétale)
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  createParticles(100);
+  animate();
+</script>
+
 
 </body>
 </html>
