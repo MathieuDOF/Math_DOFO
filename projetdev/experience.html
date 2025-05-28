@@ -197,6 +197,23 @@
   createParticles(100);
   animate();
 </script>
+<script>
+    // Script pour détecter l'apparition au scroll
+    function onScrollAnimate() {
+      const elements = document.querySelectorAll('.scroll-animate');
+      const windowBottom = window.innerHeight;
+
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < windowBottom - 100) { // déclenche 100px avant le bas
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', onScrollAnimate);
+    window.addEventListener('load', onScrollAnimate);
+  </script>
 
 
 </body>
