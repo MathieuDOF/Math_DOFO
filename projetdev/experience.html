@@ -2,11 +2,49 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Mes compétences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mathieu DOFO - Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Dégradé bleu clair animé + animation hover sur les boxes -->
+  <style>
+    body {
+      background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #a5f3fc, #dbeafe);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      min-height: 100vh;
+    }
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
+    /* Animation hover sur les sections */
+    section:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 24px rgba(255 255 255 / 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      will-change: transform, box-shadow;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="font-sans text-white">
+
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <span class="text-white text-xl font-bold">Mathieu DOFO</span>
       <div class="flex space-x-4">
@@ -17,24 +55,35 @@
     </div>
   </nav>
 
-  <div class="h-20"></div>
-  <style>
-  body {
-    background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #a5f3fc, #dbeafe);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-  }
+  <div class="h-20"></div> <!-- marge sous la navbar -->
 
-  @keyframes gradientMove {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-</style>
-</head> 
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-8">
+
+    <!-- Box 1 -->
+    <section class="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20">
+      <h2 class="text-2xl font-semibold mb-2">Stage d'observation - Technocentre Renault</h2>
+      <p class="italic mb-4">Saint-Quentin en Yvelines (1 semaine)</p>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Participation à des présentations techniques en français et en anglais.</li>
+        <li>Prise de notes et préparation de comptes-rendus pour les réunions d'équipe.</li>
+      </ul>
+    </section>
+
+    <!-- Box 2 -->
+    <section class="bg-white/30 backdrop-blur-md p-8 rounded-xl shadow-lg border border-white/20">
+      <h2 class="text-2xl font-semibold mb-2">Serveur / chef de rang - L’Idéale des Gourmands</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Accueil et service des clients, gestion des commandes.</li>
+        <li>Développement de la capacité à interagir professionnellement avec les clients.</li>
+        <li>Adaptation aux situations imprévues et gestion du stress en période de forte affluence.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-6 text-white/70">
+    © 2025 Mathieu DOFO. Tous droits réservés.
+  </footer>
+
+</body>
+</html>

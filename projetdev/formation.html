@@ -2,19 +2,120 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Mes compétences</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mathieu DOFO - Portfolio</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Dégradé bleu clair animé -->
+  <style>
+    body {
+      background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #a5f3fc, #dbeafe);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      min-height: 100vh;
+    }
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-white">
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
+  <!-- Navbar -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <span class="text-white text-xl font-bold">Mathieu DOFO</span>
       <div class="flex space-x-4">
-        <a href="#" class="text-white hover:underline">Accueil</a>
+        <a href="/index.html" class="text-white hover:underline">Accueil</a>
         <a href="/calculatrice.html" class="text-white hover:underline">Calculatrice</a>
         <a href="/contact.html" class="text-white hover:underline">Contact</a>
       </div>
     </div>
   </nav>
 
+  <!-- Espace sous navbar -->
   <div class="h-20"></div>
+
+  <!-- Conteneur principal -->
+  <main class="max-w-7xl mx-auto px-8 py-12">
+
+    <h1 class="text-4xl font-bold mb-12 text-center underline underline-offset-4 animate-fadeIn">Bienvenue sur mon site</h1>
+
+    <!-- Grille 2 colonnes -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- Bloc Expériences -->
+      <div class="bg-white/30 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/30 flex items-start space-x-6 animate-fadeIn transition hover:scale-105 duration-500 min-h-[250px]">
+        <svg class="w-12 h-12 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m0-4h.01M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z"/>
+        </svg>
+        <div>
+          <h3 class="text-2xl font-bold mb-3">Expériences</h3>
+          <p class="text-white/90 text-lg leading-relaxed">
+            Actuellement en formation, mes expériences professionnelles sont à venir et seront bientôt mises en ligne.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bloc Objectifs Futurs -->
+      <div class="bg-white/30 backdrop-blur-md p-10 rounded-2xl shadow-xl border border-white/30 flex items-start space-x-6 animate-fadeIn transition hover:scale-105 duration-500 min-h-[250px]">
+        <svg class="w-12 h-12 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-4h6v4m-7-4h8a2 2 0 002-2V7a2 2 0 00-2-2H8a2 2 0 00-2 2v4a2 2 0 002 2z"/>
+        </svg>
+        <div>
+          <h3 class="text-2xl font-bold mb-3">Objectifs futurs</h3>
+          <p class="text-white/90 text-lg leading-relaxed">
+            Dans le futur, je souhaite poursuivre sur un master en cybersécurité, puis effectuer deux années d’expertise à l’étranger.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Script opacité navbar au scroll -->
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.remove('bg-white/20');
+        navbar.classList.add('bg-white/70', 'backdrop-blur-lg');
+      } else {
+        navbar.classList.add('bg-white/20');
+        navbar.classList.remove('bg-white/70', 'backdrop-blur-lg');
+      }
+    });
+  </script>
+
+  <!-- Animation fadeIn Tailwind (personnalisée) -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
+
