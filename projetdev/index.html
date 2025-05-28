@@ -25,33 +25,31 @@
       plugins: [daisyui]
     }
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
-  <style>
-  body {
-    background-color: #f9c2d9; /* Plus rose, mais toujours doux */
-    margin: 0;
-    overflow-x: hidden;
-  }
-
-  canvas#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-</style>
-
   
+  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
+  
+  <style>
+    body {
+      background-color: #f9c2d9; /* Plus rose, mais toujours doux */
+     margin: 0;
+      overflow-x: hidden;
+    }
+
+    canvas#background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      }
+  </style>
+
 </head>
 
 <body class="min-h-screen text-white font-sans">
   <canvas id="background"></canvas>
-
-  
-
 
   <!-- 🧊 NAVBAR -->
   <nav id="navbar" class="bg-animated backdrop-blur-md border-b border-white/20 fixed top-0 left-0 w-full z-50 shadow-md transition duration-300">
@@ -64,7 +62,7 @@
       </div>
     </div>
   </nav>
-
+  
   <div class="h-20"></div>
 
   <!-- 👋 TITRE -->
@@ -72,7 +70,7 @@
     <h1 class="text-4xl font-bold underline underline-offset-4 animate-fadeIn">Bienvenue sur mon site</h1>
   </header>
 
-  <!-- 💼 PROJETS -->
+  <!-- About Me -->
   <section id="projets" class="max-w-6xl mx-auto px-6 py-10">
     <h2 class="text-3xl font-bold mb-6 text-center">
       <a href="/aboutme.html" class="hover:underline text-inherit">About Me</a>
@@ -80,12 +78,8 @@
 
     <div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
       
-      <!-- 📦 BOX EXPÉRIENCES avec effets, grande fenêtre et icônes -->
-<!-- 📦 BOX EXPÉRIENCES avec effets, grande fenêtre et icônes -->
-
-
-<!-- 📦 BOX EXPÉRIENCES avec effets, grande fenêtre et icônes -->
-<div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
+  <!-- 📦 BOX EXPÉRIENCES avec effets, grande fenêtre et icônes -->
+  <div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
             hover:shadow-2xl hover:scale-105 hover:backdrop-blur-lg transition duration-300">
   <h3 class="text-xl font-semibold text-white">Expériences</h3>
   <p class="text-white">Encore plus à venir </p>
@@ -117,16 +111,15 @@
       <a href="/experience.html" class="text-blue-600 hover:underline text-sm">→ Voir plus</a>
     </div>
   </div>
-</div>
+  </div>
 
-      <div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
+  <div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
             hover:shadow-2xl hover:scale-105 hover:backdrop-blur-lg transition duration-300">
   <h3 class="text-xl font-semibold text-white">Formation</h3>
   <p class="text-white">Bachelor Cybersécurité - EPITA</p>
 
   <div class="absolute top-full left-0 mt-4 w-80 p-5 bg-white text-black rounded-xl shadow-2xl 
               opacity-0 pointer-events-none hover-content transition duration-300 z-10 space-y-3">
-    
     <div class="flex items-start space-x-3">
       <svg class="w-6 h-6 text-yellow-500" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -150,41 +143,41 @@
       <a href="/formation.html" class="text-blue-600 hover:underline text-sm">→ Voir plus</a>
     </div>
   </div>
-</div>
+  </div>
 
 
-      <div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
+  <div class="relative hover-box group bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 
             hover:shadow-2xl hover:scale-105 hover:backdrop-blur-lg transition duration-300">
-  <h3 class="text-xl font-semibold text-white">Compétences</h3>
-  <p class="text-white">HTML, CSS, JS, Python, Linux, Git...</p>
-
-  <div class="absolute top-full left-0 mt-4 w-80 p-5 bg-white text-black rounded-xl shadow-2xl 
+  
+      <h3 class="text-xl font-semibold text-white">Compétences</h3>
+      <p class="text-white">HTML, CSS, JS, Python, Linux, Git...</p>
+    <div class="absolute top-full left-0 mt-4 w-80 p-5 bg-white text-black rounded-xl shadow-2xl 
               opacity-0 pointer-events-none hover-content transition duration-300 z-10 space-y-3">
 
-    <div class="flex items-start space-x-3">
-      <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" stroke-width="2"
+      <div class="flex items-start space-x-3">
+        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
+          <path stroke-linecap="round" stroke-linejoin="round"
               d="M9 17v-4h6v4m-7 4h8a2 2 0 002-2v-5a2 2 0 00-.59-1.41l-5-5a2 2 0 00-2.82 0l-5 5A2 2 0 004 14v5a2 2 0 002 2z">
-        </path>
-      </svg>
-      <p>Frontend : HTML, CSS, Tailwind, JavaScript</p>
-    </div>
+          </path>
+        </svg>
+        <p>Frontend : HTML, CSS, Tailwind, JavaScript</p>
+      </div>
 
-    <div class="flex items-start space-x-3">
-      <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" stroke-width="2"
+      <div class="flex items-start space-x-3">
+        <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" stroke-width="2"
            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
+          <path stroke-linecap="round" stroke-linejoin="round"
               d="M5 13l4 4L19 7"></path>
-      </svg>
-      <p>Backend & Outils : Python, Git, Linux, Bash</p>
-    </div>
+        </svg>
+        <p>Backend & Outils : Python, Git, Linux, Bash</p>
+      </div>
 
-    <div class="text-right">
-      <a href="/competences.html" class="text-blue-600 hover:underline text-sm">→ Voir plus</a>
+      <div class="text-right">
+        <a href="/competences.html" class="text-blue-600 hover:underline text-sm">→ Voir plus</a>
+      </div>
     </div>
   </div>
-</div>
 <script>
   document.querySelectorAll('.hover-box').forEach(box => {
     const content = box.querySelector('.hover-content');
