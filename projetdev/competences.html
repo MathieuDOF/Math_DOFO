@@ -2,19 +2,135 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mes compétences</title>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Fond animé bleu clair -->
+  <style>
+    body {
+      background: linear-gradient(-45deg, #e0f2fe, #bae6fd, #a5f3fc, #dbeafe);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+    }
 
-<nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-white font-sans">
+
+  <!-- 🧊 NAVBAR -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full bg-white/20 backdrop-blur-md border-b border-white/10 z-50 transition duration-300">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
       <span class="text-white text-xl font-bold">Mathieu DOFO</span>
       <div class="flex space-x-4">
-        <a href="#" class="text-white hover:underline">Accueil</a>
+        <a href="/" class="text-white hover:underline">Accueil</a>
         <a href="/calculatrice.html" class="text-white hover:underline">Calculatrice</a>
         <a href="/contact.html" class="text-white hover:underline">Contact</a>
       </div>
     </div>
   </nav>
 
+  <!-- Petit décalage pour la navbar -->
   <div class="h-20"></div>
+
+  <!-- 💡 Titre -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl font-bold underline underline-offset-4">Mes compétences</h1>
+  </header>
+
+  <!-- ✅ Tu peux ajouter ici tes blocs de compétences -->
+  <main class="max-w-6xl mx-auto px-6 py-10 grid gap-6 md:grid-cols-2">
+  <!-- Bloc 1 -->
+  <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 01-8 0m8 0a4 4 0 00-8 0m8 0H8m8 0a4 4 0 01-8 0"></path>
+    </svg>
+    <div>
+      <h3 class="text-xl font-semibold">Langages</h3>
+      <p>Fondamentaux en C, Python et développement Web</p>
+    </div>
+  </div>
+
+  <!-- Bloc 2 -->
+  <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12h.01M12 12h.01M9 12h.01M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+    </svg>
+    <div>
+      <h3 class="text-xl font-semibold">Cybersécurité</h3>
+      <p>Python pour la sécurité, Pentest Web</p>
+    </div>
+  </div>
+
+  <!-- Bloc 3 -->
+  <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M9 10H4v6a2 2 0 002 2h2m9-6a3 3 0 11-6 0 3 3 0 016 0z"></path>
+    </svg>
+    <div>
+      <h3 class="text-xl font-semibold">Travail d’équipe</h3>
+      <p>Collaboration efficace sur des projets en groupe</p>
+    </div>
+  </div>
+
+  <!-- Bloc 4 -->
+  <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18M3 12h18M3 17h18"></path>
+    </svg>
+    <div>
+      <h3 class="text-xl font-semibold">Organisation & Rigueur</h3>
+      <p>Approche structurée, efficace et sérieuse du travail</p>
+    </div>
+  </div>
+
+  <!-- Bloc 5 -->
+  <div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m2 0h.01M12 18h.01"></path>
+    </svg>
+    <div>
+      <h3 class="text-xl font-semibold">Leadership & Écoute</h3>
+      <p>Bonne communication et sens du leadership</p>
+    </div>
+  </div>
+
+  <!-- Bloc 6 : Langues -->
+<div class="bg-white/30 backdrop-blur-md p-6 rounded-xl shadow-lg border border-white/20 flex items-start space-x-4">
+  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path>
+  </svg>
+  <div>
+    <h3 class="text-xl font-semibold">Langues</h3>
+    <ul class="list-disc list-inside space-y-1">
+      <li>Français : langue maternelle</li>
+      <li>Anglais : niveau B2</li>
+      <li>TOEIC : 845</li>
+    </ul>
+  </div>
+</div>
+
+</main>
+
+
+  <!-- 👣 Footer -->
+  <footer class="text-center py-6 text-white/70">
+    © 2025 Mathieu DOFO. Tous droits réservés.
+  </footer>
+
+</body>
+</html>
