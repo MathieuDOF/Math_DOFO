@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mathieu DOFO - Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            fadeIn: 'fadeIn 1.5s ease-in-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
+        }
+      },
+      plugins: [daisyui]
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/daisyui"></script>
+  <style>
+  body {
+    background-color: #f9c2d9; /* Plus rose, mais toujours doux */
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  canvas#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+  
+</head>
+
+<body class="min-h-screen text-white font-sans">
+  <canvas id="background"></canvas>
+
+  <div class="max-w-xl mx-auto bg-white/80 text-black p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white/30 mt-24 animate-fadeIn transition hover:scale-105 duration-500">
+  <p class="text-lg font-medium leading-relaxed">
+    Je suis à la recherche d'un stage d’une durée de 4 à 6 semaines dans le domaine de l'informatique, 
+    et plus particulièrement en cybersécurité, afin de mettre en pratique mes connaissances et développer 
+    de nouvelles compétences techniques en collaboration avec des professionnels du secteur.
+  </p>
+</div>
+
+    <div class="max-w-xl mx-auto bg-white/80 text-black p-6 rounded-2xl shadow-lg backdrop-blur-md border border-white/30 mt-24 animate-fadeIn transition hover:scale-105 duration-500">
+  <p class="text-lg font-medium leading-relaxed">
+    Je ratique régulière du basketball et de la musculation. Je suis un fervent passionée d'informatique et des nouvelles technologies. Mais sur tout et avant tout je suis un passionée Sport mécaniques et automobile 
+
+  </p>
+</div>
+
+<section class="max-w-4xl mx-auto bg-white/80 text-black p-6 rounded-xl shadow-lg my-10">
+  <h2 class="text-3xl font-bold text-center mb-6">🎓 Quiz – Connais-tu bien Mathieu DOFO ?</h2>
+  
+  <form id="quizForm" class="space-y-6">
+
+    <!-- Question 1 -->
+    <div>
+      <p class="font-semibold">1. Dans quel domaine Mathieu DOFO cherche-t-il un stage ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q1" value="C" /> C. Cybersécurité</label><br>
+        <label><input type="radio" name="q1" value="A" /> A. Développement Web</label><br>
+        <label><input type="radio" name="q1" value="B" /> B. Réseaux sociaux</label><br>
+        <label><input type="radio" name="q1" value="D" /> D. Intelligence artificielle</label>
+      </div>
+    </div>
+
+    <!-- Question 2 -->
+    <div>
+      <p class="font-semibold">2. Quelle formation suit Mathieu actuellement ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q2" value="C" /> C. Bachelor Cybersécurité à EPITA</label><br>
+        <label><input type="radio" name="q2" value="A" /> A. BTS SIO</label><br>
+        <label><input type="radio" name="q2" value="B" /> B. DUT Informatique</label><br>
+        <label><input type="radio" name="q2" value="D" /> D. Master Cloud & DevOps</label>
+      </div>
+    </div>
+
+    <!-- Question 3 -->
+    <div>
+      <p class="font-semibold">3. Combien de semaines dure le stage que Mathieu cherche ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q3" value="B" /> B. 4 à 6 semaines</label><br>
+        <label><input type="radio" name="q3" value="A" /> A. 2 à 4 semaines</label><br>
+        <label><input type="radio" name="q3" value="C" /> C. 8 à 12 semaines</label><br>
+        <label><input type="radio" name="q3" value="D" /> D. 1 an</label>
+      </div>
+    </div>
+
+    <!-- Question 4 -->
+    <div>
+      <p class="font-semibold">4. Quelle technologie n’est <strong>pas</strong> mentionnée dans ses compétences ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q4" value="B" /> B. Java</label><br>
+        <label><input type="radio" name="q4" value="A" /> A. Git</label><br>
+        <label><input type="radio" name="q4" value="C" /> C. Linux</label><br>
+        <label><input type="radio" name="q4" value="D" /> D. Python</label>
+      </div>
+    </div>
+
+    <!-- Question 5 -->
+    <div>
+      <p class="font-semibold">5. Quel poste Mathieu a-t-il déjà occupé ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q5" value="B" /> B. Chef de rang / serveur à L’Idéale des Gourmands</label><br>
+        <label><input type="radio" name="q5" value="A" /> A. Développeur Frontend chez Google</label><br>
+        <label><input type="radio" name="q5" value="C" /> C. Professeur de cybersécurité</label><br>
+        <label><input type="radio" name="q5" value="D" /> D. Consultant en sécurité à la CNIL</label>
+      </div>
+    </div>
+
+    <!-- Question 6 -->
+    <div>
+      <p class="font-semibold">6. Où Mathieu a-t-il effectué un stage en 2024 ?</p>
+      <div class="space-y-1 mt-2">
+        <label><input type="radio" name="q6" value="C" /> C. Technocentre Renault</label><br>
+        <label><input type="radio" name="q6" value="A" /> A. Microsoft</label><br>
+        <label><input type="radio" name="q6" value="B" /> B. Airbus</label><br>
+        <label><input type="radio" name="q6" value="D" /> D. Orange Cyberdéfense</label>
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+        Valider mes réponses
+      </button>
+    </div>
+    <div class="text-center mt-4">
+    <button type="button" id="bruteForceBtn" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded">
+        Brute Force 💣
+    </button>
+    </div>
+    <!-- Animation confettis -->
+<canvas id="confettiCanvas" style="position: fixed; top: 0; left: 0; pointer-events: none; width: 100%; height: 100%; z-index: 9999; display: none;"></canvas>
+
+<script>
+  // Fonction pour lancer les confettis
+  function launchConfetti() {
+    const canvas = document.getElementById('confettiCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.display = 'block';
+
+    const confettiCount = 150;
+    const confettis = [];
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    // Création des confettis
+    for (let i = 0; i < confettiCount; i++) {
+      confettis.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height - canvas.height,
+        r: randomRange(5, 10),
+        d: (Math.random() * confettiCount) + 10,
+        color: `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`,
+        tilt: Math.floor(Math.random() * 10) - 10,
+        tiltAngle: 0,
+        tiltAngleIncremental: (Math.random() * 0.07) + 0.05
+      });
+    }
+
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      confettis.forEach((c) => {
+        ctx.beginPath();
+        ctx.lineWidth = c.r / 2;
+        ctx.strokeStyle = c.color;
+        ctx.moveTo(c.x + c.tilt + (c.r / 4), c.y);
+        ctx.lineTo(c.x + c.tilt, c.y + c.tilt + (c.r / 4));
+        ctx.stroke();
+      });
+      updateConfetti();
+    }
+
+    function updateConfetti() {
+      confettis.forEach((c, i) => {
+        c.tiltAngle += c.tiltAngleIncremental;
+        c.y += (Math.cos(c.d) + 3 + c.r / 2) / 2;
+        c.x += Math.sin(c.d);
+        c.tilt = Math.sin(c.tiltAngle) * 15;
+
+        // Réinitialisation confetti si hors écran
+        if (c.y > canvas.height) {
+          confettis[i] = {
+            x: Math.random() * canvas.width,
+            y: -10,
+            r: c.r,
+            d: c.d,
+            color: c.color,
+            tilt: c.tilt,
+            tiltAngle: 0,
+            tiltAngleIncremental: c.tiltAngleIncremental
+          };
+        }
+      });
+    }
+
+    function loop() {
+      drawConfetti();
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+    // Arrêter après 5 secondes
+    setTimeout(() => {
+      canvas.style.display = 'none';
+    }, 5000);
+  }
+
+  // Modification de la validation pour lancer l’animation en cas de 6/6
+  document.getElementById('submitQuiz').addEventListener('click', () => {
+    const answers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'B',
+      q4: 'B',
+      q5: 'B',
+      q6: 'C'
+    };
+    let score = 0;
+    for (let q in answers) {
+      const userAnswer = document.querySelector(`input[name="${q}"]:checked`);
+      if (userAnswer && userAnswer.value === answers[q]) score++;
+    }
+
+    alert(`Votre score est ${score} / 6`);
+
+    if (score === 6) {
+      launchConfetti();
+    }
+  });
+</script>
+
+
+
+    <p id="quizResult" class="text-center mt-4 font-bold text-xl text-green-700"></p>
+  </form>
+</section>
+
+<script>
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'B',
+      q4: 'B',
+      q5: 'B',
+      q6: 'C'
+    };
+    
+    let score = 0;
+    for (let q in correctAnswers) {
+      const userAnswer = document.querySelector(`input[name="${q}"]:checked`);
+      if (userAnswer && userAnswer.value === correctAnswers[q]) {
+        score++;
+      }
+    }
+
+    document.getElementById('quizResult').textContent = `🎉 Tu as obtenu ${score}/6 !`;
+  });
+</script>
+
+  
+
+
+<script>
+  document.getElementById('quizForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const correctAnswers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'B',
+      q4: 'B',
+      q5: 'B',
+      q6: 'C'
+    };
+    
+    let score = 0;
+    for (let q in correctAnswers) {
+      const userAnswer = document.querySelector(`input[name="${q}"]:checked`);
+      if (userAnswer && userAnswer.value === correctAnswers[q]) {
+        score++;
+      }
+    }
+
+    document.getElementById('quizResult').textContent = `🎉 Tu as obtenu ${score}/6 !`;
+  });
+</script>
+<script>
+  document.getElementById('bruteForceBtn').addEventListener('click', () => {
+    const answers = {
+      q1: 'C',
+      q2: 'C',
+      q3: 'B',
+      q4: 'B',
+      q5: 'B',
+      q6: 'C'
+    };
+
+    for (let q in answers) {
+      const selector = `input[name="${q}"][value="${answers[q]}"]`;
+      const input = document.querySelector(selector);
+      if (input) input.checked = true;
+    }
+  });
+</script>
+
+
+
+
+</section>
+
+
+
+  
+
+
+  <!-- 🧊 NAVBAR -->
+  <nav id="navbar" class="bg-animated backdrop-blur-md border-b border-white/20 fixed top-0 left-0 w-full z-50 shadow-md transition duration-300">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <span class="text-white text-2xl font-extrabold drop-shadow-md">Mathieu DOFO</span>
+      <div class="flex space-x-4">
+        <a href="/index.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Accueil</a>
+        <a href="/calculatrice.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Calculatrice</a>
+        <a href="/contact.html" class="text-white text-xl font-bold hover:underline drop-shadow-sm hover:text-blue-200 transition duration-200">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="h-20"></div>
+  <script>
+  const canvas = document.getElementById('background');
+  const ctx = canvas.getContext('2d');
+
+  let width, height;
+  let particles = [];
+
+  function resizeCanvas() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  function createParticles(count) {
+    particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5,
+        alpha: Math.random() * 0.5 + 0.3
+      });
+    }
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, width, height);
+    for (const p of particles) {
+      p.x += p.dx;
+      p.y += p.dy;
+
+      // rebond aux bords
+      if (p.x < 0 || p.x > width) p.dx *= -1;
+      if (p.y < 0 || p.y > height) p.dy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255, 105, 180, ${p.alpha})`; // rose flashy avec transparence
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  createParticles(100); // nombre de particules
+  animate();
+</script>
+
+
+
+  
+
+</body>
+</html>
