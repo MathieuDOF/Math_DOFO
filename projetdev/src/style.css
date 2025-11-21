@@ -1,32 +1,8 @@
 @import "tailwindcss";
 @import "daisyui";
-<<<<<<< HEAD
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply min-h-screen overflow-hidden;
-  background: linear-gradient(-45deg, #ec4899, #f472b6, #f9a8d4, #fbcfe8);
-  background-size: 400% 400%;
-  animation: gradientMove 10s ease infinite;
-}
-
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-=======
 .bg-animated {
   background: linear-gradient(-45deg, #fecdd3, #fbcfe8, #fcd5ce, #fde2e4);
   background-size: 400% 400%;
   animation: gradientMove 12s ease infinite;
->>>>>>> d6c9c5f9b2137debd9f00868563c7c69386210fc
 }
 
