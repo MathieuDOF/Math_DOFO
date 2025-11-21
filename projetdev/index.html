@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,6 +30,9 @@
   
   <style>
     body {
+      background: linear-gradient(-45deg, #fce7f3, #fbcfe8, #f9a8d4, #fef3c7);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
       background-color: #f9c2d9; /* Plus rose, mais toujours doux */
      margin: 0;
       overflow-x: hidden;
@@ -96,9 +99,9 @@
   <div class="h-20"></div>
 
   <!-- 👋 TITRE -->
-  <header class="text-center my-10">
-    <h1 class="text-4xl font-bold underline underline-offset-4 animate-fadeIn">Bienvenue sur mon site</h1>
-  </header>
+ <header class="min-h-[60vh] flex flex-col items-center justify-center text-center">
+  <h1 class="text-6xl font-bold underline underline-offset-4 animate-fadeIn">Bienvenue sur mon site</h1>
+</header>
 
   <!-- About Me -->
   <section id="projets" class="max-w-6xl mx-auto px-6 py-10">
@@ -230,7 +233,7 @@
   </section>
 
   <!-- 👣 FOOTER -->
-  <footer class="text-center py-6 text-white/70">
+  <footer class="text-center py-70 text-white/70">
     © 2025 Mathieu DOFO. Tous droits réservés.
   </footer>
 
